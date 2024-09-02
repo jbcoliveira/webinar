@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.4.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.7.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.7.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.7.3"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.7.3"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="CustomerController.cs"/>
+        <Compile Remove="Models\**"/>
+        <Compile Remove="API\OrdersController.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Models\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="Models\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Models\**"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Features\Generic\" />
+        <Folder Include="Features\OrderItem\Commands\Create\"/>
+        <Folder Include="Features\OrderItem\Queries\Get\"/>
+        <Folder Include="Features\OrderItem\Queries\List\"/>
+        <Folder Include="Features\Order\Commands\Create\" />
+        <Folder Include="Features\Order\Commands\Delete\"/>
+        <Folder Include="Features\Order\Commands\Update\"/>
+        <Folder Include="Features\Order\Queries\Get\"/>
+        <Folder Include="Features\Order\Queries\List\"/>
+    </ItemGroup>
+</Project>
